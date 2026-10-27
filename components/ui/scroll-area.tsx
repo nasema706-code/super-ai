@@ -17,7 +17,7 @@ function ScrollArea({
         orientation="vertical"
         className="flex w-2 touch-none p-0.5 select-none"
       >
-        <ScrollAreaPrimitive.Thumb className="relative flex-1 rounded-full bg-white/20" />
+        <ScrollAreaPrimitive.Thumb className="relative flex-1 bg-foreground/25" />
       </ScrollAreaPrimitive.Scrollbar>
     </ScrollAreaPrimitive.Root>
   );

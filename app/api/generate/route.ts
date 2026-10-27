@@ -7,7 +7,7 @@ import { resolveTier, TOKEN, utcDay } from "@/lib/protocol";
 import { clientAddress, jsonError, rateLimit } from "@/lib/rate-limit";
 import { readBalances } from "@/lib/solana/balances";
 import { getConnection } from "@/lib/solana/connection";
-import { readSession } from "@/lib/solana/session";
+import { ensureGuestSession, isGuest } from "@/lib/solana/session";
 import { saveMedia } from "@/lib/storage/media";
 
 export const maxDuration = 60;
@@ -18,7 +18,7 @@ const bodySchema = z.object({
 });
 
 const STYLE =
-  "Cinematic nighttime scene, black and silver, a metallic humanoid inside a thin glowing ring, floating geometric fragments, distant city light trails, cool cyan highlights, premium photograph, no text, no logo, no watermark.";
+  "Cinematic nighttime scene, near-black and ivory, liquid chrome, a metallic figure inside thin white rings, floating geometric fragments, distant city light trails, warm white highlights, premium photograph, no text, no logo, no watermark.";
 
 /**
  * Image forge.
@@ -28,8 +28,7 @@ const STYLE =
  */
 export async function POST(request: Request) {
   try {
-    const session = await readSession();
-    if (!session) return jsonError("Bind a wallet before striking a plate.", 401);
+    const session = await ensureGuestSession();
 
     const burst = rateLimit(`forge:${session.wallet}:${clientAddress(request)}`, 8, 10 * 60 * 1000);
     if (!burst.ok) {
@@ -43,10 +42,12 @@ export async function POST(request: Request) {
     const profile = await store.touchProfile(session.wallet);
     const day = utcDay();
     let tier = resolveTier(TOKEN.mint ? 0 : null);
-    try {
-      tier = (await readBalances(getConnection(), session.wallet)).tier;
-    } catch (error) {
-      console.error("[forge-balance]", error);
+    if (!isGuest(session.wallet)) {
+      try {
+        tier = (await readBalances(getConnection(), session.wallet)).tier;
+      } catch (error) {
+        console.error("[forge-balance]", error);
+      }
     }
 
     const used = profile.imagesDay === day ? profile.imagesToday : 0;

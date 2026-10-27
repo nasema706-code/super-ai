@@ -1,15 +1,14 @@
 import { z } from "zod";
 import { getMemoryStore } from "@/lib/memory/store";
 import { jsonError, rateLimit } from "@/lib/rate-limit";
-import { readSession } from "@/lib/solana/session";
+import { ensureGuestSession } from "@/lib/solana/session";
 
 const actionSchema = z.object({
   action: z.literal("summon"),
 });
 
 export async function GET() {
-  const session = await readSession();
-  if (!session) return jsonError("Bind a wallet to recall the companion.", 401);
+  const session = await ensureGuestSession();
 
   const store = await getMemoryStore();
   const profile = await store.touchProfile(session.wallet);
@@ -26,8 +25,7 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const session = await readSession();
-  if (!session) return jsonError("Bind a wallet before the rite.", 401);
+  const session = await ensureGuestSession();
 
   const limit = rateLimit(`summon:${session.wallet}`, 8, 10 * 60 * 1000);
   if (!limit.ok) return jsonError("The rite was just completed.", 429);

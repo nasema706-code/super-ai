@@ -75,6 +75,22 @@ export async function readSession() {
   return wallet ? { wallet } : null;
 }
 
+export function isGuest(wallet: string) {
+  return wallet.startsWith("guest-");
+}
+
+/**
+ * Temporary open session while wallet connect is switched off.
+ * A real binding still replaces this cookie when the signature route is used.
+ */
+export async function ensureGuestSession() {
+  const existing = await readSession();
+  if (existing) return existing;
+  const wallet = `guest-${crypto.randomUUID()}`;
+  await writeSession(wallet);
+  return { wallet };
+}
+
 export async function writeSession(wallet: string) {
   const exp = Math.floor(Date.now() / 1000) + MAX_AGE_SECONDS;
   const jar = await cookies();

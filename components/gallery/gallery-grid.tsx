@@ -32,15 +32,15 @@ export function GalleryGrid() {
   }, []);
 
   if (!items) {
-    return <p className="text-sm text-white/50">Opening the archive…</p>;
+    return <p className="text-sm font-light text-muted">Opening the archive…</p>;
   }
 
   if (error) return <p className="text-sm text-red-200/80">{error}</p>;
 
   if (items.length === 0) {
     return (
-      <p className="max-w-lg text-sm leading-6 text-white/60">
-        No public summons yet. Bind a wallet, strike a plate in the forge, and choose to share it.
+      <p className="max-w-lg text-sm leading-6 font-light text-muted">
+        No public summons yet. Strike a plate in the forge, and choose to share it.
       </p>
     );
   }
@@ -48,12 +48,12 @@ export function GalleryGrid() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
-        <figure key={item.id} className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
+        <figure key={item.id} className="overflow-hidden border border-border bg-surface">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={item.url} alt={item.prompt} className="aspect-square w-full object-cover" />
-          <figcaption className="space-y-2 p-4">
-            <p className="text-sm leading-6 text-white/80">{item.prompt}</p>
-            <p className="font-mono text-[11px] text-white/40">{item.walletPreview}</p>
+          <img src={item.url} alt={item.prompt} className="aspect-[1678/937] w-full object-cover" />
+          <figcaption className="space-y-2 border-t border-border p-4">
+            <p className="font-display text-lg leading-7 font-light">{item.prompt}</p>
+            <p className="font-mono text-[11px] text-faint">{item.walletPreview}</p>
           </figcaption>
         </figure>
       ))}

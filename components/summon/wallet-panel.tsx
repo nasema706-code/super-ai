@@ -18,11 +18,11 @@ export function WalletPanel({ binding }: { binding: BindingState }) {
   const { snapshot, error, loading } = useBalances();
 
   return (
-    <div className="border-b border-white/10 px-4 py-4 md:px-5">
+    <div className="border-b border-border px-4 py-5 md:px-5">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-[11px] tracking-[0.22em] text-white/45 uppercase">Bound wallet</p>
-          <p className="mt-1 font-mono text-sm text-white">
+          <p className="kicker">Bound wallet</p>
+          <p className="mt-2 font-mono text-sm text-foreground">
             {binding.address ? shortAddress(binding.address) : "No wallet connected"}
           </p>
         </div>
@@ -30,14 +30,12 @@ export function WalletPanel({ binding }: { binding: BindingState }) {
       </div>
       <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
         <div>
-          <dt className="text-[10px] tracking-[0.18em] text-white/40 uppercase">SOL</dt>
-          <dd className="mt-1 text-white">{loading ? "Reading…" : snapshot ? snapshot.sol.toFixed(3) : "—"}</dd>
+          <dt className="kicker">SOL</dt>
+          <dd className="mt-2 font-light text-foreground">{loading ? "Reading…" : snapshot ? snapshot.sol.toFixed(3) : "—"}</dd>
         </div>
         <div>
-          <dt className="text-[10px] tracking-[0.18em] text-white/40 uppercase">
-            {snapshot?.tokenSymbol ?? "Token"}
-          </dt>
-          <dd className="mt-1 text-white">
+          <dt className="kicker">{snapshot?.tokenSymbol ?? "Token"}</dt>
+          <dd className="mt-2 font-light text-foreground">
             {!snapshot?.tokenConfigured
               ? "Mint unset"
               : snapshot.tokenAmount == null
@@ -47,7 +45,7 @@ export function WalletPanel({ binding }: { binding: BindingState }) {
         </div>
       </dl>
       {snapshot?.tier.provisional ? (
-        <p className="mt-3 text-xs leading-5 text-white/45">
+        <p className="mt-3 text-xs leading-5 font-light text-faint">
           The mint is unpublished, so the gate is open at Bound while you build.
         </p>
       ) : null}

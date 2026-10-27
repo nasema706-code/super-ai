@@ -37,20 +37,20 @@ export function CompanionChat({ initialMessages }: { initialMessages: UIMessage[
       <ScrollArea className="min-h-[320px] flex-1">
         <div className="flex flex-col gap-4 px-4 py-5 md:px-5">
           {messages.length === 0 ? (
-            <p className="text-sm leading-6 text-white/55">
-              The companion is listening. Tell it your name, or ask what this wallet holds.
+            <p className="text-sm leading-6 font-light text-muted">
+              The companion is listening. Tell it your name.
             </p>
           ) : null}
           {messages.map((message) => (
             <article key={message.id} className={message.role === "user" ? "text-right" : "text-left"}>
-              <p className="text-[10px] tracking-[0.18em] text-white/35 uppercase">
+              <p className="kicker">
                 {message.role === "user" ? "Holder" : "Super AI"}
               </p>
               <div
                 className={
                   message.role === "user"
-                    ? "mt-2 inline-block max-w-[92%] rounded-2xl bg-white px-3 py-2 text-left text-sm text-black"
-                    : "mt-2 max-w-[95%] text-sm leading-6 text-white/85"
+                    ? "mt-2 inline-block max-w-[92%] bg-foreground px-3 py-2 text-left text-sm font-light text-background"
+                    : "mt-2 max-w-[95%] font-display text-base leading-7 font-light text-foreground"
                 }
               >
                 {textFrom(message) ? <p className="whitespace-pre-wrap">{textFrom(message)}</p> : null}
@@ -59,7 +59,7 @@ export function CompanionChat({ initialMessages }: { initialMessages: UIMessage[
                   const state = "state" in part ? String(part.state) : "";
                   const output = "output" in part ? part.output : undefined;
                   return (
-                    <p key={`${part.type}-${index}`} className="mt-2 text-[11px] tracking-wide text-white/45">
+                    <p key={`${part.type}-${index}`} className="mt-2 text-[11px] tracking-wide text-faint">
                       {toolLabel(part.type)} · {state === "output-available" ? "answered" : "listening"}
                       {output && typeof output === "object" && "line" in output
                         ? ` — ${String((output as { line?: string }).line ?? "")}`
@@ -70,7 +70,7 @@ export function CompanionChat({ initialMessages }: { initialMessages: UIMessage[
               </div>
             </article>
           ))}
-          {busy ? <p className="text-xs tracking-[0.18em] text-white/40 uppercase">Answering</p> : null}
+          {busy ? <p className="kicker">Answering</p> : null}
         </div>
       </ScrollArea>
       {error ? (
@@ -82,7 +82,7 @@ export function CompanionChat({ initialMessages }: { initialMessages: UIMessage[
         </p>
       ) : null}
       <form
-        className="border-t border-white/10 p-4 md:p-5"
+        className="border-t border-border p-4 md:p-5"
         onSubmit={(event) => {
           event.preventDefault();
           const text = input.trim();

@@ -1,58 +1,52 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 
-const WalletMultiButton = dynamic(
-  async () => (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
-  {
-    ssr: false,
-    loading: () => (
-      <span className="inline-flex h-9 items-center rounded-full border border-white/15 px-4 text-[11px] tracking-[0.16em] text-white/70 uppercase">
-        Connect
-      </span>
-    ),
-  },
-);
-
 const links = [
+  { href: "/gallery", label: "Collection" },
   { href: "/summon", label: "Protocol" },
-  { href: "/tokenomics", label: "Lore" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/tokenomics", label: "Thesis" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between gap-4 px-4 md:px-8">
-        <Link href="/" className="font-display text-sm tracking-[0.28em] text-white">
-          SUPER AI
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border/80 bg-background/80 backdrop-blur-md">
+      <div className="mx-auto grid h-16 max-w-[1600px] grid-cols-[1fr_auto] items-center gap-4 px-4 md:grid-cols-[1fr_auto_1fr] md:px-8">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-foreground/70 text-[10px] tracking-[0.18em] text-foreground">
+            SI
+          </span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-[15px] font-light text-foreground italic">Summoning Intelligence</span>
+            <span className="mt-1 text-[9px] tracking-catalog text-muted uppercase">Super AI</span>
+          </span>
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center md:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-[11px] tracking-[0.22em] text-white/65 uppercase transition-colors hover:text-white"
+              className="inline-flex h-11 items-center px-3 text-xs tracking-catalog text-muted uppercase transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex justify-end md:col-start-3">
           <details className="relative md:hidden">
-            <summary className="cursor-pointer list-none text-[11px] tracking-[0.18em] text-white/70 uppercase">
-              Menu
-            </summary>
-            <div className="absolute right-0 mt-3 flex w-40 flex-col gap-3 rounded-2xl border border-white/10 bg-black/90 p-4">
+            <summary className="cursor-pointer list-none text-xs tracking-catalog text-muted uppercase">Menu</summary>
+            <div className="absolute right-0 mt-3 flex w-44 flex-col border border-border bg-background p-2">
               {links.map((link) => (
-                <Link key={link.href} href={link.href} className="text-xs tracking-[0.16em] text-white/80 uppercase">
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-2 text-xs tracking-catalog text-muted uppercase hover:text-foreground"
+                >
                   {link.label}
                 </Link>
               ))}
             </div>
           </details>
-          <WalletMultiButton />
         </div>
       </div>
     </header>

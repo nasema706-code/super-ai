@@ -7,7 +7,7 @@ import { resolveTier, TOKEN } from "@/lib/protocol";
 import { clientAddress, jsonError, rateLimit } from "@/lib/rate-limit";
 import { readBalances } from "@/lib/solana/balances";
 import { getConnection } from "@/lib/solana/connection";
-import { readSession } from "@/lib/solana/session";
+import { ensureGuestSession, isGuest } from "@/lib/solana/session";
 
 export const maxDuration = 60;
 
@@ -25,8 +25,7 @@ function messageText(message: UIMessage) {
  */
 export async function POST(request: Request) {
   try {
-    const session = await readSession();
-    if (!session) return jsonError("Bind a wallet before speaking to the companion.", 401);
+    const session = await ensureGuestSession();
 
     const limit = rateLimit(`chat:${session.wallet}:${clientAddress(request)}`, 24, 10 * 60 * 1000);
     if (!limit.ok) {
@@ -70,11 +69,13 @@ export async function POST(request: Request) {
     }
 
     let tier = resolveTier(TOKEN.mint ? 0 : null);
-    try {
-      const snapshot = await readBalances(getConnection(), session.wallet);
-      tier = snapshot.tier;
-    } catch (error) {
-      console.error("[chat-balance]", error);
+    if (!isGuest(session.wallet)) {
+      try {
+        const snapshot = await readBalances(getConnection(), session.wallet);
+        tier = snapshot.tier;
+      } catch (error) {
+        console.error("[chat-balance]", error);
+      }
     }
 
     const result = streamText({

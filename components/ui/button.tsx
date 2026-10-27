@@ -6,18 +6,19 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium tracking-[0.14em] uppercase transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50 disabled:pointer-events-none disabled:opacity-40",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap border text-xs font-normal tracking-catalog uppercase transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground disabled:pointer-events-none disabled:opacity-40",
   {
     variants: {
       variant: {
-        default: "bg-white text-black hover:bg-white/85",
-        outline: "border border-white/20 bg-transparent text-white hover:bg-white/8",
-        ghost: "text-white/80 hover:bg-white/8 hover:text-white",
+        default: "border-foreground bg-foreground text-background hover:bg-foreground/85",
+        outline:
+          "border-foreground/40 bg-background/40 text-foreground backdrop-blur-sm hover:border-foreground hover:bg-foreground hover:text-background",
+        ghost: "border-border text-muted hover:border-foreground hover:text-foreground",
       },
       size: {
-        default: "h-10 px-5",
-        sm: "h-8 px-3 text-[11px]",
-        lg: "h-12 px-7",
+        default: "h-11 px-5",
+        sm: "h-9 px-4 text-[11px]",
+        lg: "h-11 px-5",
       },
     },
     defaultVariants: {

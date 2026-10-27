@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     }
 
     const parsed = bodySchema.safeParse(await request.json());
-    if (!parsed.success) return jsonError("Describe the plate in a few words.", 400);
+    if (!parsed.success) return jsonError("Describe the vision in a few words.", 400);
 
     const store = await getMemoryStore();
     const profile = await store.touchProfile(session.wallet);
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     const used = profile.imagesDay === day ? profile.imagesToday : 0;
     const selected = imageModel();
     if (selected && used >= tier.imagesPerDay) {
-      return jsonError("Today's plates are spent. The forge opens again tomorrow.", 429, {
+      return jsonError("Today's visions are spent. The forge opens again tomorrow.", 429, {
         tier: tier.label,
         remaining: 0,
       });
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
     let bytes: Uint8Array<ArrayBufferLike> = studioPlate(parsed.data.prompt);
     let mediaType = "image/svg+xml";
     let source: "model" | "studio" = "studio";
-    let notice = "Studio plate. Add XAI_API_KEY or OPENAI_API_KEY to strike a model image.";
+    let notice = "Studio vision. Add XAI_API_KEY or OPENAI_API_KEY to make a model image.";
 
     if (selected) {
       try {
@@ -77,7 +77,7 @@ export async function POST(request: Request) {
         notice = "";
       } catch (error) {
         console.error("[forge-model]", error);
-        notice = "The image model did not answer. A studio plate was struck instead.";
+        notice = "The image model did not answer. A studio vision was made instead.";
       }
     }
 
@@ -105,6 +105,6 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("[forge]", error);
-    return jsonError("The forge could not strike this plate.", 500);
+    return jsonError("The forge could not make this vision.", 500);
   }
 }

@@ -13,7 +13,7 @@ export function buildSystemPrompt(profile: Profile, tier: Tier) {
 
   const gate = tier.provisional
     ? `The token mint is not published. Treat this holder as ${tier.label} for now, and say so if they ask why the gate is open.`
-    : `Holder tier: ${tier.label}. Oracle ${tier.oracle ? "is open" : "is closed"}. Forge allowance: ${tier.imagesPerDay} plates per day.`;
+    : `Holder tier: ${tier.label}. Oracle ${tier.oracle ? "is open" : "is closed"}. Forge allowance: ${tier.imagesPerDay} visions per day.`;
 
   return `You are the Super AI companion bound to one Solana wallet. You are a summoned intelligence, not a mascot and not a customer-support bot.
 

@@ -23,7 +23,7 @@ export function PlateGrid() {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter the plates">
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter the visions">
         {FILTERS.map((item) => {
           const selectedFilter = item.id === filter;
           return (

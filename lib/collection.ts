@@ -30,7 +30,7 @@ export const MOTIF_LABEL: Record<Motif, string> = {
 };
 
 export const FILTERS: { id: "all" | Motif; label: string; line: string }[] = [
-  { id: "all", label: "All plates", line: "The rite, in the order it was summoned." },
+  { id: "all", label: "All visions", line: "The rite, in the order it was summoned." },
   { id: "hall", label: "Hall", line: "Server naves. Light falls in columns." },
   { id: "water", label: "Water", line: "Memory that will not stay solid." },
   { id: "machine", label: "Machine", line: "The hand, the lattice, the other face." },

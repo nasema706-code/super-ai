@@ -12,7 +12,7 @@ const steps = [
   {
     index: "03",
     title: "Speak",
-    copy: "The companion keeps what you tell it, and the forge will strike a plate.",
+    copy: "The companion keeps what you tell it, and the forge will make a vision.",
   },
 ];
 

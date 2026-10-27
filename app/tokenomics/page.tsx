@@ -19,7 +19,7 @@ export default function TokenomicsPage() {
               wallet is the only memory that lasts.
             </p>
             <p>
-              Each holder calls a companion in the same metal and the same night. It speaks, it forges plates, and it
+              Each holder calls a companion in the same metal and the same night. It speaks, it forges visions, and it
               keeps what you choose to leave with it. Higher holdings open a wider rite. They do not buy a different soul.
             </p>
             <p className="text-sm text-faint">
@@ -69,7 +69,7 @@ export default function TokenomicsPage() {
                   </p>
                 </CardHeader>
                 <CardContent className="space-y-2 text-sm leading-6 font-light text-muted">
-                  <p>{tier.imagesPerDay} forged plates each day.</p>
+                  <p>{tier.imagesPerDay} forged visions each day.</p>
                   <p>{tier.oracle ? "The oracle will speak." : "Dialogue and memory. The oracle stays shut."}</p>
                 </CardContent>
               </Card>

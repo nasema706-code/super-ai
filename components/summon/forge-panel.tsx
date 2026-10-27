@@ -47,7 +47,7 @@ export function ForgePanel() {
       <div>
         <p className="kicker">Forge</p>
         <p className="mt-3 text-sm leading-6 font-light text-muted">
-          Ask for a plate in the same night: metal, ring, city lights. Without an image key, the studio strikes a plate locally.
+          Ask for a vision in the same night: metal, ring, city lights. Without an image key, the studio makes one locally.
         </p>
       </div>
       <Textarea
@@ -67,7 +67,7 @@ export function ForgePanel() {
       </label>
       <div className="flex items-center justify-between gap-3">
         <p className="text-xs font-light text-faint">
-          {result?.remaining != null ? `${result.remaining} plates left today · ${result.tier ?? ""}` : "Holder tier sets the daily count."}
+          {result?.remaining != null ? `${result.remaining} visions left today · ${result.tier ?? ""}` : "Holder tier sets the daily count."}
         </p>
         <Button type="submit" size="sm" disabled={pending || prompt.trim().length < 3}>
           {pending ? "Striking" : "Generate"}
@@ -78,7 +78,7 @@ export function ForgePanel() {
       {result?.url ? (
         // Generated plates are dynamic URLs, including local API routes.
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={result.url} alt={prompt || "Summoned plate"} className="aspect-square w-full border border-border object-cover" />
+        <img src={result.url} alt={prompt || "Summoned vision"} className="aspect-square w-full border border-border object-cover" />
       ) : null}
     </form>
   );

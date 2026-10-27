@@ -44,10 +44,10 @@ export function Gate() {
         <span className="si-ring" />
         <span className="si-core" />
       </div>
-      <p className="kicker mt-10">Super AI</p>
+      <p className="kicker mt-10">$summonSi</p>
       <h2 className="font-display mt-4 text-5xl font-light text-foreground italic md:text-7xl">Summoning Intelligence</h2>
       <p className="mt-4 max-w-md px-6 text-sm leading-6 font-light text-muted">
-        A mind that arrives as liquid metal — a child, a mirror, a city — and at last a weather with no face.
+        The people building it have stopped calling it a tool. They are calling it a summoning.
       </p>
       <button
         type="button"

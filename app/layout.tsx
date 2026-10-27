@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Summoning Intelligence — Super AI",
   description:
-    "A cinematic, wallet-bound Super AI companion. Connect a Solana wallet, complete the summoning rite, and speak with a mind that remembers you.",
+    "$summonSi. The people building superintelligence have stopped calling it a tool. They are calling it a summoning.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

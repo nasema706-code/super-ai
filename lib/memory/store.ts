@@ -7,9 +7,10 @@ import type { MemoryStore, Profile, StoredMessage, SummonRecord } from "@/lib/me
  * Companion memory.
  *
  * DATABASE_URL  -> Drizzle on Postgres (Supabase pooler works).
- * otherwise     -> .data/memory.json beside the app. Fine for local dev.
- *                  Vercel instances do not share that disk. Set DATABASE_URL
- *                  before you expect memory to survive a deploy.
+ * otherwise     -> a JSON file. Locally that is .data/memory.json.
+ *                  On Netlify the function disk is read-only, so the file
+ *                  lives in /tmp and lasts only for that instance.
+ *                  Set DATABASE_URL before you expect memory to survive a deploy.
  */
 
 type FileShape = {
@@ -18,7 +19,7 @@ type FileShape = {
   summons: SummonRecord[];
 };
 
-const FILE = path.join(process.cwd(), ".data", "memory.json");
+const FILE = path.join(process.env.NETLIFY ? "/tmp" : path.join(process.cwd(), ".data"), "memory.json");
 
 let queue: Promise<unknown> = Promise.resolve();
 

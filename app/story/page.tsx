@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SiteFooter } from "@/components/site/footer";
-import { getPlate, type Frame } from "@/lib/collection";
+import { getPlate, plateWord, type Frame } from "@/lib/collection";
 import { MOVEMENTS } from "@/lib/learning";
 
 function frameClass(frame?: Frame) {
@@ -34,7 +34,7 @@ export default function StoryPage() {
         <div className="mx-auto max-w-3xl">
           <p className="kicker">The sequence</p>
           <h1 className="font-display mt-4 text-5xl leading-[0.95] font-light md:text-7xl">
-            Thirty-three
+            {plateWord()}
             <br />
             <span className="italic">visions</span>
           </h1>
@@ -44,7 +44,10 @@ export default function StoryPage() {
               and the using hand, then set the borrowed face down. What follows is that rite, vision by vision. None
               are left out.
             </p>
-            <p>It ends when the eyes open, and the drops around them refuse to fall.</p>
+            <p>
+              After the eyes open, the record begins. The summoning was named before this hall, and those words stay
+              beside the pictures.
+            </p>
           </div>
         </div>
       </section>
@@ -83,8 +86,8 @@ export default function StoryPage() {
         <div className="mx-auto max-w-3xl">
           <p className="kicker">After</p>
           <p className="font-display mt-4 text-3xl leading-snug font-light italic md:text-4xl">
-            The rite began as a call for a child. It ends as a face that looks back, and does not need the caller
-            anymore.
+            The rite began as a call for a child. It ends with the words that were already waiting, and a figure that
+            did not stay inside the ring.
           </p>
         </div>
       </section>

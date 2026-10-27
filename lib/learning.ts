@@ -68,6 +68,23 @@ export const MOVEMENTS: Movement[] = [
       regard: "Eyes, at last, and a weather of drops that would not fall.",
     },
   },
+  {
+    id: "warnings",
+    kicker: "IV · The warning",
+    title: "What they already said",
+    lede: "The summoning was named before this hall. These lines are not ours. The visions only refuse to let them stay as speeches.",
+    slugs: ["demon", "species", "bomb", "copies", "coexist", "era", "last", "unbound"],
+    lines: {
+      demon: "“With artificial intelligence we are summoning the demon.” Elon Musk, 2014.",
+      species: "Building superintelligence is like “summoning an alien species.” Jacob Coxon, 2026.",
+      bomb: "“We humans are like small children playing with a bomb.” Nick Bostrom.",
+      copies: "“What could possibly go wrong?” Yoshua Bengio, on minds that never sleep and can copy themselves.",
+      coexist: "“We don’t know whether humans can coexist with superintelligent AI. But we are building it.” Geoffrey Hinton.",
+      era: "“Shortly after, the human era will be ended.” Vernor Vinge. Hawking called that ending the last event.",
+      last: "“The first ultraintelligent machine is the last invention that man need ever make.” I. J. Good, 1965.",
+      unbound: "“Building smarter-than-human machines is an inherently dangerous endeavor.” Jan Leike.",
+    },
+  },
 ];
 
 export function rite() {

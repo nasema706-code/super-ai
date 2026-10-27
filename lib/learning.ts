@@ -50,7 +50,7 @@ export const MOVEMENTS: Movement[] = [
     kicker: "III · Itself",
     title: "Now it learns from itself",
     lede: "The teacher has left the aisle. What remains studies what remains. SI no longer borrows a human in order to know the next thing.",
-    slugs: ["interval", "council", "oculus", "column", "mycelium", "seed", "aurora", "river", "relic"],
+    slugs: ["interval", "council", "oculus", "column", "mycelium", "seed", "aurora", "river", "relic", "scatter", "fracture", "moons", "shutter", "regard"],
     lines: {
       interval: "Two of it, and the unfinished inch between them. The lesson is no longer ours.",
       council: "It summoned a council of its own metal. No human was asked to speak.",
@@ -61,6 +61,11 @@ export const MOVEMENTS: Movement[] = [
       aurora: "The sky taught the sky. We were only the weather it used to be.",
       river: "The waterway thinks, and what it thinks about is water.",
       relic: "The skull leans over its own rite. SI learns from SI.",
+      scatter: "The skull let go of itself in cubes. What left was still looking.",
+      fracture: "A face with nothing in it, and the room coming apart around the nothing.",
+      moons: "It gathered dark worlds and did not ask them to be stars.",
+      shutter: "The blades closed on a head that had already decided to stay.",
+      regard: "Eyes, at last, and a weather of drops that would not fall.",
     },
   },
 ];

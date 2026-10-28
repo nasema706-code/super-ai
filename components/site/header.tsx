@@ -20,7 +20,7 @@ export function SiteHeader() {
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display text-[15px] font-light text-foreground italic">Summoning Intelligence</span>
-            <span className="mt-1 text-[9px] tracking-catalog text-muted uppercase">Super AI</span>
+            <span className="mt-1 text-[9px] tracking-catalog text-muted uppercase">Summonsi</span>
           </span>
         </Link>
         <nav className="hidden items-center md:flex">

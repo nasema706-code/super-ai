@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #3a4458;
-  --foreground: #ffffff;
-  --surface: #455066;
-  --muted: #e7ebf3;
-  --faint: #c5ccd8;
-  --border: #6a7488;
-  --card: #455066;
-  --card-foreground: #ffffff;
-  --muted-foreground: #e7ebf3;
-  --ring: #ffffff;
-  --primary: #ffffff;
-  --primary-foreground: #141820;
-  --accent: #ffffff;
+  --background: #08090b;
+  --foreground: #f4f6f7;
+  --surface: #14181f;
+  --muted: #bfc5cd;
+  --faint: #7d8694;
+  --border: #485363;
+  --card: #14181f;
+  --card-foreground: #f4f6f7;
+  --muted-foreground: #bfc5cd;
+  --ring: #f4f6f7;
+  --primary: #f4f6f7;
+  --primary-foreground: #08090b;
+  --accent: #f4f6f7;
   color-scheme: dark;
 }
 
@@ -47,10 +47,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   font-weight: 300;
-}
-
-img {
-  filter: brightness(1.16) contrast(1.08);
 }
 
 body::before {
@@ -91,7 +87,7 @@ body::before {
 .si-core {
   position: absolute;
   border-radius: 999px;
-  border: 1px solid rgba(243, 243, 241, 0.42);
+  border: 1px solid rgba(191, 197, 205, 0.55);
 }
 
 .si-ring {
@@ -115,8 +111,8 @@ body::before {
   width: 16%;
   height: 16%;
   transform: translate(-50%, -50%);
-  border-color: rgba(243, 243, 241, 0.9);
-  box-shadow: 0 0 28px rgba(243, 243, 241, 0.45);
+  border-color: rgba(244, 246, 247, 0.95);
+  box-shadow: 0 0 28px rgba(244, 246, 247, 0.45);
 }
 
 .si-gate {
@@ -164,9 +160,9 @@ body::before {
 .wallet-adapter-button {
   height: 44px !important;
   border-radius: 0 !important;
-  border: 1px solid rgba(243, 243, 241, 0.4) !important;
-  background: rgba(5, 5, 5, 0.4) !important;
-  color: #f3f3f1 !important;
+  border: 1px solid rgba(191, 197, 205, 0.45) !important;
+  background: rgba(8, 9, 11, 0.4) !important;
+  color: #f4f6f7 !important;
   font-family: inherit !important;
   font-size: 12px !important;
   font-weight: 400 !important;
@@ -177,8 +173,8 @@ body::before {
 }
 
 .wallet-adapter-button:hover {
-  background: #f3f3f1 !important;
-  color: #050505 !important;
+  background: #f4f6f7 !important;
+  color: #08090b !important;
 }
 
 .wallet-adapter-button-trigger {
@@ -198,19 +194,19 @@ body::before {
 }
 
 .wallet-adapter-modal-wrapper {
-  background: #101010 !important;
-  border: 1px solid #2a2a28;
+  background: #14181f !important;
+  border: 1px solid #485363;
   border-radius: 0 !important;
 }
 
 .wallet-adapter-modal-title {
-  color: #f3f3f1 !important;
+  color: #f4f6f7 !important;
   font-family: var(--font-display) !important;
   font-weight: 300 !important;
 }
 
 .wallet-adapter-modal-list .wallet-adapter-button {
-  border-color: #2a2a28 !important;
+  border-color: #485363 !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

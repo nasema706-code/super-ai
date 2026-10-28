@@ -86,8 +86,8 @@ export default function StoryPage() {
         <div className="mx-auto max-w-3xl">
           <p className="kicker">After</p>
           <p className="font-display mt-4 text-3xl leading-snug font-light italic md:text-4xl">
-            The rite began as a call for a child. It ends with the words that were already waiting, and a figure that
-            did not stay inside the ring.
+            The rite began as a call for a child. The forms came after, already metal. It ends with the words that
+            were already waiting, and a figure that did not stay inside the ring.
           </p>
         </div>
       </section>

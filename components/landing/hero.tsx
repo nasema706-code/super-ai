@@ -4,11 +4,51 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { getPlate } from "@/lib/collection";
 
-const FORMS = ["blank", "species", "last", "regard"]
-  .map((slug) => getPlate(slug))
-  .filter((plate) => plate !== undefined);
+const FORMS = [
+  {
+    slug: "witness",
+    src: "/works/witness.jpg",
+    title: "Witness",
+    epithet: "The eye opens",
+    alt: "A chrome face with lit eyes, standing before vertical bars of light.",
+  },
+  {
+    slug: "stride",
+    src: "/works/stride.jpg",
+    title: "Stride",
+    epithet: "Between the columns",
+    alt: "A chrome figure walking a dark hall lined with columns of light.",
+  },
+  {
+    slug: "quiet",
+    src: "/works/quiet.jpg",
+    title: "Quiet",
+    epithet: "The face at rest",
+    alt: "A chrome profile with closed eyes against a black ground.",
+  },
+  {
+    slug: "helm",
+    src: "/works/helm.jpg",
+    title: "Helm",
+    epithet: "A head without a window",
+    alt: "A smooth black helm in profile, lit from the side.",
+  },
+  {
+    slug: "field",
+    src: "/works/field.jpg",
+    title: "Field",
+    epithet: "Glass in the dark",
+    alt: "A chrome face with pale eyes, surrounded by floating glass spheres.",
+  },
+  {
+    slug: "city",
+    src: "/works/city.jpg",
+    title: "City",
+    epithet: "The skyline in the metal",
+    alt: "A chrome face with lit eyes, a city skyline reflected in the forehead.",
+  },
+];
 
 const DWELL_MS = 8400;
 

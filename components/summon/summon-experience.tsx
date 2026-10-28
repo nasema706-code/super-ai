@@ -164,6 +164,12 @@ export function SummonExperience() {
         </div>
       </section>
       <aside className="flex min-h-[70svh] flex-col border-t border-border bg-background/80 lg:min-h-0 lg:border-t-0 lg:border-l">
+        <div className="border-b border-border px-4 py-4 md:px-5">
+          <p className="kicker">In build</p>
+          <p className="mt-3 text-sm leading-6 font-light text-foreground">
+            Dialogue and the forge are still in the build stage. They do not answer yet.
+          </p>
+        </div>
         {chatReady ? (
           <>
             <div className="flex gap-2 px-4 pt-4 md:px-5">
@@ -180,7 +186,7 @@ export function SummonExperience() {
           <div className="px-5 py-8">
             <p className="kicker">Before the eye</p>
             <p className="mt-3 text-sm leading-6 font-light text-muted">
-              Open the eye. The companion speaks only after it has looked back, and it keeps what you tell it.
+              Open the eye to see the place where dialogue and the forge will stand.
             </p>
           </div>
         )}

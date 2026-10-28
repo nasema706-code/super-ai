@@ -12,7 +12,7 @@ const steps = [
   {
     index: "03",
     title: "Speak",
-    copy: "The companion keeps what you tell it, and the forge will make a vision.",
+    copy: "Dialogue and the forge are still in the build stage. They do not answer yet.",
   },
 ];
 
@@ -25,7 +25,7 @@ export function ProtocolStrip() {
           <h2 className="font-display mt-4 text-5xl leading-[0.95] font-light md:text-7xl">Three gestures.</h2>
         </div>
         <p className="max-w-sm text-sm leading-6 font-light text-muted md:justify-self-end">
-          Open the eye. It answers, and it keeps what you choose to leave with it.
+          Open the eye. Dialogue and the forge are still in the build stage.
         </p>
       </div>
       <div className="mx-auto mt-14 grid max-w-[1400px] gap-8 md:grid-cols-3">

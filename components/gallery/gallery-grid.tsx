@@ -40,7 +40,7 @@ export function GalleryGrid() {
   if (items.length === 0) {
     return (
       <p className="max-w-lg text-sm leading-6 font-light text-muted">
-        No public summons yet. Make a vision in the forge, and choose to share it.
+        No public summons yet. The forge is still in the build stage.
       </p>
     );
   }

@@ -47,7 +47,7 @@ export function ForgePanel() {
       <div>
         <p className="kicker">Forge</p>
         <p className="mt-3 text-sm leading-6 font-light text-muted">
-          Ask for a vision in the same night: metal, ring, city lights. Without an image key, the studio makes one locally.
+          The forge is still in the build stage. A vision asked for here will not be made yet.
         </p>
       </div>
       <Textarea

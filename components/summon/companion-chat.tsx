@@ -38,7 +38,7 @@ export function CompanionChat({ initialMessages }: { initialMessages: UIMessage[
         <div className="flex flex-col gap-4 px-4 py-5 md:px-5">
           {messages.length === 0 ? (
             <p className="text-sm leading-6 font-light text-muted">
-              The companion is listening. Tell it your name.
+              Dialogue is still in the build stage. A message sent from here will not be answered yet.
             </p>
           ) : null}
           {messages.map((message) => (

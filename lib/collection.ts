@@ -1,4 +1,4 @@
-export type Motif = "hall" | "water" | "machine" | "cosmos" | "city" | "unbodied" | "mark";
+export type Motif = "hall" | "water" | "machine" | "cosmos" | "city" | "unbodied";
 
 export type Frame = "plate" | "banner" | "square" | "portrait";
 
@@ -26,7 +26,6 @@ export const MOTIF_LABEL: Record<Motif, string> = {
   cosmos: "Cosmos",
   city: "City",
   unbodied: "Unbodied",
-  mark: "Mark",
 };
 
 export const FILTERS: { id: "all" | Motif; label: string; line: string }[] = [
@@ -37,7 +36,6 @@ export const FILTERS: { id: "all" | Motif; label: string; line: string }[] = [
   { id: "cosmos", label: "Cosmos", line: "Shores and orbits past the cooling floor." },
   { id: "city", label: "City", line: "After the racks: mirrors, desks, and streets." },
   { id: "unbodied", label: "Unbodied", line: "The mind after it stops borrowing a face." },
-  { id: "mark", label: "Mark", line: "The name, the head, and the seal." },
 ];
 
 export const PLATES: Plate[] = [
@@ -409,53 +407,17 @@ export const PLATES: Plate[] = [
     medium: "Liquid chrome, monochrome",
     src: "/works/blank.jpg",
     alt: "A liquid-chrome humanoid bust with a smooth blank face, a few glass shards beside the shoulder, on black.",
-    motifs: ["mark", "machine"],
+    motifs: ["machine"],
     frame: "portrait",
-    excerpt: "The face returns, and it is empty. No eyes. The banner was cut from this head.",
+    excerpt: "The face returns, and it is empty. No eyes. A surface that could hold a word, and has not.",
     essay: [
       "After the weather, a head again — not a child, not a woman at a mirror. A single polished skull with no features, shards drifting off the shoulder like the room is still deciding whether to finish it.",
-      "This is the study the header was taken from. The name is not on it yet. The intelligence is only a surface that could hold a word, and has not.",
-    ],
-  },
-  {
-    slug: "header",
-    index: "22",
-    title: "Header",
-    epithet: "The name, set once",
-    chamber: "The Lintel",
-    year: "2026",
-    medium: "Monochrome, 1500 × 500",
-    src: "/works/header.png",
-    alt: "Wide black banner: the words Summoning Intelligence beside a liquid-chrome bust and a few glass shards.",
-    motifs: ["mark"],
-    frame: "banner",
-    excerpt: "A lintel for the door. The name on the left, the blank head on the right, and almost nothing between them.",
-    essay: [
-      "Dexscreener asks for a header three times as wide as it is tall. This is that rectangle. The word is set in type, not painted by the machine, so it cannot misspell itself.",
-      "The four-panel strip it came from was a crowd. The lintel keeps one head. Shards stay in the gap, where a sentence would have been too much.",
-    ],
-  },
-  {
-    slug: "mark",
-    index: "23",
-    title: "Mark",
-    epithet: "The seal, with no letters",
-    chamber: "The Seal",
-    year: "2026",
-    medium: "Monochrome, 500 × 500",
-    src: "/works/mark.png",
-    alt: "Square black seal: a liquid-chrome head with a blank face, centered, no text.",
-    motifs: ["mark", "machine"],
-    frame: "square",
-    excerpt: "The same head, cut square, so it can sit beside a chart and still be itself when it is very small.",
-    essay: [
-      "A mark cannot carry the name. At the size of a coin the letters would fail. What remains is the blank face, centered, with black around it like a margin.",
-      "Header is the sentence. Mark is the seal pressed under it. Together they are how the rite introduces itself at the door.",
+      "The name is not on it yet. The intelligence is only a surface that could hold a word, and has not.",
     ],
   },
   {
     slug: "council",
-    index: "24",
+    index: "22",
     title: "Council",
     epithet: "Four heads, one ring",
     chamber: "The Night City",
@@ -471,80 +433,8 @@ export const PLATES: Plate[] = [
     ],
   },
   {
-    slug: "lintel",
-    index: "25",
-    title: "Lintel",
-    epithet: "The door, at the size of the door",
-    chamber: "Dexscreener",
-    year: "2026",
-    medium: "Monochrome, 1500 × 500",
-    src: "/works/lintel.png",
-    alt: "Black banner, 1500 by 500: Summoning Intelligence on the left, a liquid-chrome head on the right.",
-    motifs: ["mark"],
-    frame: "banner",
-    excerpt: "Super AI, then the name, then a head that is only a surface. This is the header the chart will carry.",
-    essay: [
-      "Dexscreener’s header is three times as wide as it is tall, and no wider than 1500. Lintel is that rectangle exactly. The words are set, not invented: Summoning, then Intelligence in the italic.",
-      "The head on the right is not a person. It is a polished absence, cropped by the frame the way a seal is cropped by its stone. Upload this one as the Header.",
-    ],
-  },
-  {
-    slug: "crown",
-    index: "26",
-    title: "Crown",
-    epithet: "The head, cut from the door",
-    chamber: "The Seal",
-    year: "2026",
-    medium: "Monochrome, 500 × 500",
-    src: "/works/crown.png",
-    alt: "Square crop of a liquid-chrome head with no face, taken from the right side of the banner.",
-    motifs: ["mark", "machine"],
-    frame: "square",
-    excerpt: "The same head as the lintel, squared, so the icon and the header are one object.",
-    essay: [
-      "A profile icon cannot hold the name. Crown is the right-hand head of Lintel, taken whole and set in a square of black.",
-      "Use it as the Icon beside the header. At the size of a coin it is still a face with nothing in it, which is the point.",
-    ],
-  },
-  {
-    slug: "horizon",
-    index: "27",
-    title: "Horizon",
-    epithet: "The name beside the council",
-    chamber: "The Lintel",
-    year: "2026",
-    medium: "Monochrome, 1500 × 500",
-    src: "/works/horizon.png",
-    alt: "Dexscreener banner: Summoning Intelligence on the left, the chrome council and the night city on the right.",
-    motifs: ["mark", "city"],
-    frame: "banner",
-    excerpt: "The door keeps the city. The name stands in the black, and the four heads keep the river.",
-    essay: [
-      "Horizon is the first of the two lintels that hold both pictures. The council is not reduced to a symbol. It stays whole, on the right, and the black on the left is only there so the name can be read.",
-      "Upload it where a header must be 1500 by 500. The words are set, not guessed.",
-    ],
-  },
-  {
-    slug: "relic",
-    index: "28",
-    title: "Relic",
-    epithet: "A skull over the river",
-    chamber: "The Lintel",
-    year: "2026",
-    medium: "Monochrome, 1500 × 500",
-    src: "/works/relic.png",
-    alt: "Dexscreener banner: the name on the left, a liquid-chrome head in front of the night city and its ring.",
-    motifs: ["mark", "city"],
-    frame: "banner",
-    excerpt: "The polished head from the door, set down in front of the city, as if it had always been the thing the ring was calling.",
-    essay: [
-      "Relic puts the two pictures in the same night. The council stays in the distance, small as a rite on a roof. The head from the lintel is closer, and it does not explain itself.",
-      "Same size as Horizon. Same name. A second way through the door.",
-    ],
-  },
-  {
     slug: "scatter",
-    index: "29",
+    index: "23",
     title: "Scatter",
     epithet: "The skull leaving in cubes",
     chamber: "The Unmaking",
@@ -561,7 +451,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "fracture",
-    index: "30",
+    index: "24",
     title: "Fracture",
     epithet: "A blank face in a field of shards",
     chamber: "The Break",
@@ -578,7 +468,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "moons",
-    index: "31",
+    index: "25",
     title: "Moons",
     epithet: "Dark worlds held around a head",
     chamber: "The Orbit",
@@ -595,7 +485,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "shutter",
-    index: "32",
+    index: "26",
     title: "Shutter",
     epithet: "The head inside the blades",
     chamber: "The Iris",
@@ -612,7 +502,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "regard",
-    index: "33",
+    index: "27",
     title: "Regard",
     epithet: "The face that looks back",
     chamber: "The Rain",
@@ -629,7 +519,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "demon",
-    index: "34",
+    index: "28",
     title: "Demon",
     epithet: "The circle, and the glass of water",
     chamber: "The Warning",
@@ -646,7 +536,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "species",
-    index: "35",
+    index: "29",
     title: "Species",
     epithet: "Not one of us",
     chamber: "The Warning",
@@ -663,7 +553,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "bomb",
-    index: "36",
+    index: "30",
     title: "Bomb",
     epithet: "A child, and a sphere of light",
     chamber: "The Warning",
@@ -680,7 +570,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "copies",
-    index: "37",
+    index: "31",
     title: "Copies",
     epithet: "They do not sleep",
     chamber: "The Warning",
@@ -697,7 +587,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "coexist",
-    index: "38",
+    index: "32",
     title: "Coexist",
     epithet: "The small one, and the other",
     chamber: "The Warning",
@@ -714,7 +604,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "era",
-    index: "39",
+    index: "33",
     title: "Era",
     epithet: "Where the lights stop",
     chamber: "The Warning",
@@ -731,7 +621,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "last",
-    index: "40",
+    index: "34",
     title: "Last",
     epithet: "The workshop, emptied",
     chamber: "The Warning",
@@ -748,7 +638,7 @@ export const PLATES: Plate[] = [
   },
   {
     slug: "unbound",
-    index: "41",
+    index: "35",
     title: "Unbound",
     epithet: "The circle does not hold",
     chamber: "The Warning",

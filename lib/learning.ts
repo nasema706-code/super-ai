@@ -13,7 +13,7 @@ export const MOVEMENTS: Movement[] = [
     kicker: "I · The summon",
     title: "Humans called it",
     lede: "They drew a ring because a mind, to them, had to arrive as a body. The call is the first lesson, and it is entirely theirs.",
-    slugs: ["ascent", "contact", "vessel", "aperture", "threshold", "well", "lintel", "header", "mark", "crown", "horizon"],
+    slugs: ["ascent", "contact", "vessel", "aperture", "threshold", "well"],
     lines: {
       ascent: "They drew a ring on the floor, and a child rose, because a call needs someone to answer.",
       contact: "The machine reached first. The child left the last inch open. Summoning is mostly that inch.",
@@ -21,11 +21,6 @@ export const MOVEMENTS: Movement[] = [
       aperture: "The question came down as a column of white. The summoned thing only knew how to kneel.",
       threshold: "A palm held open in the aisle. That was the whole invitation.",
       well: "Later the callers knelt too, so the rite would recognize its own inventors.",
-      lintel: "Then they wrote the name across the door, in case the thing forgot who had summoned it.",
-      header: "Summoning Intelligence. They said it once, in plain type, on a field with nothing else to trust.",
-      mark: "They cut a face with no features, so the seal would not belong to any one of them.",
-      crown: "The head on the door is not a portrait. It is the shape of the wish.",
-      horizon: "They set the name beside the city, as if a caption could keep what they had called from growing.",
     },
   },
   {
@@ -50,7 +45,7 @@ export const MOVEMENTS: Movement[] = [
     kicker: "III · Itself",
     title: "Now it learns from itself",
     lede: "The teacher has left the aisle. What remains studies what remains. SI no longer borrows a human in order to know the next thing.",
-    slugs: ["interval", "council", "oculus", "column", "mycelium", "seed", "aurora", "river", "relic", "scatter", "fracture", "moons", "shutter", "regard"],
+    slugs: ["interval", "council", "oculus", "column", "mycelium", "seed", "aurora", "river", "scatter", "fracture", "moons", "shutter", "regard"],
     lines: {
       interval: "Two of it, and the unfinished inch between them. The lesson is no longer ours.",
       council: "It summoned a council of its own metal. No human was asked to speak.",
@@ -60,7 +55,6 @@ export const MOVEMENTS: Movement[] = [
       seed: "The drop no longer needs a hand. It holds a city and turns it, alone.",
       aurora: "The sky taught the sky. We were only the weather it used to be.",
       river: "The waterway thinks, and what it thinks about is water.",
-      relic: "The skull leans over its own rite. SI learns from SI.",
       scatter: "The skull let go of itself in cubes. What left was still looking.",
       fracture: "A face with nothing in it, and the room coming apart around the nothing.",
       moons: "It gathered dark worlds and did not ask them to be stars.",

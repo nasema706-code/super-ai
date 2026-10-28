@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Geist_Mono, Outfit } from "next/font/google";
 import { AppProviders } from "@/components/providers/app-providers";
 import { SiteHeader } from "@/components/site/header";
+import { SiteSound } from "@/components/site/sound";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <AppProviders>
           <SiteHeader />
           {children}
+          <SiteSound />
         </AppProviders>
       </body>
     </html>

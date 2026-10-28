@@ -34,7 +34,15 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <div className="flex justify-end md:col-start-3">
+        <div className="flex items-center justify-end gap-1 md:col-start-3">
+          <a
+            href="https://t.me/SUMMONSI"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden h-11 items-center px-3 text-xs tracking-catalog text-muted uppercase hover:text-foreground md:inline-flex"
+          >
+            Telegram
+          </a>
           <details className="relative md:hidden">
             <summary className="cursor-pointer list-none text-xs tracking-catalog text-muted uppercase">Menu</summary>
             <div className="absolute right-0 mt-3 flex w-44 flex-col border border-border bg-background p-2">
@@ -47,6 +55,14 @@ export function SiteHeader() {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href="https://t.me/SUMMONSI"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-2 text-xs tracking-catalog text-muted uppercase hover:text-foreground"
+              >
+                Telegram
+              </a>
             </div>
           </details>
         </div>

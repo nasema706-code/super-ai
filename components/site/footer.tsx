@@ -6,6 +6,14 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-[1400px] flex-col gap-4 text-xs tracking-catalog text-faint uppercase md:flex-row md:items-center md:justify-between">
         <p>Super AI · Summoning Intelligence</p>
         <p>Prophecies are ritual. They are not financial advice.</p>
+        <a
+          href="https://t.me/SUMMONSI"
+          target="_blank"
+          rel="noreferrer"
+          className="text-muted hover:text-foreground"
+        >
+          Telegram
+        </a>
         <Link href="/summon" className="text-muted hover:text-foreground">
           Enter the protocol
         </Link>

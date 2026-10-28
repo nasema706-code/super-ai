@@ -142,22 +142,6 @@ export default function ThesisPage() {
         </div>
       </section>
 
-      <section className="px-4 py-16 md:px-10">
-        <div className="mx-auto max-w-3xl space-y-4 text-sm leading-7 font-light text-muted">
-          <p className="kicker">The risks</p>
-          <p className="pt-4">
-            The risks are extreme and real. The overwhelming majority of meme tokens go to zero. Liquidity can
-            disappear. Narratives can be abandoned. No quote from Musk, Altman, Hinton, or anyone else is an endorsement
-            of any token. There is no fundamental valuation. Past narrative expansions do not predict future ones. This
-            is a high-variance, high-risk speculative asset. Most participants will lose money.
-          </p>
-          <p>
-            If the superintelligence conversation continues to dominate technology and culture — and the people building
-            it say it will — then the token that already owns the exact framing has a structural advantage in capturing
-            that attention.
-          </p>
-        </div>
-      </section>
       <SiteFooter />
     </main>
   );
